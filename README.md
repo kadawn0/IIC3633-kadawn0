@@ -6,6 +6,16 @@ Blog para el curso Sistemas Recomendadores
 ## Posts
 
 <dl>
+  <dt>[03-09-2019] Performance of Recommender Algorithms on Top-N Recommendation Tasks</dt>
+  <dd><em>Resumen: </em> This paper goes trough a revision of collaborative filtering methods for recommender systems. It highlights the importance of personalization over fixed recommendations based on the entirety of the user set, due to the risk of causing boredom in people.</dd> 
+  <dd>For neighbourhood models such as KNN, this paper also shows a new similarity metric, which is a percentage of any other similarity coefficient that is scaled down by a "shrinkage coefficient". Its purpose is to account for credibility all over the training set, due to poor measurements of users' preferences. There is also an adjustement made to account for inherent preference in a certain kind of item across the dataset, which can be described as a residual rating based on bias.</dd>
+  <dd>In the case of NNCosNgbr, the author explains how it bases its recommendations solely on user preference, without any input from similar users or the entire user base.</dd>
+  <dd>Apart from what I described before, this paper compares other classical recommender systems using precision and recall. These metrics are reported for different dimensionalities of the selected training set.All the training sets come from a bigger one, and there are two of those. Namely, Netflix Prize and Movielens datasets.</dd>
+  <dd>In general, the theory of precision/recall tradeoff is empirically shown to work in a graph of precision vs recall for each dataset. The recommender system which tended to yield the best results was PureSVD, or Matricial Factorization only. Overall, tests run on the Movielens dataset had better precision.</dd>
+  <dd>In general, Top-N recommender systems typically overcome problems regarding as high proportion of datasets containing a single type of popular item. They can take an unpopular item for recommendation to a single usar. These systems still lack the ability of recommending relevant items to cold start users, but they are robust in all other cases.</dd>
+</dl>
+
+<dl>
   <dt>[27-08-2019] Collaborative Filtering for Implicit Feedback Datasets</dt>
   <dd><em>Implicit feedback: </em>Consiste en tomar recomendaciones del usuario cuando no las ha dado explícitamente. Esto significa que el usuario nunca hace el rating del contenido, sino que más bien da pistas de lo que le gusta por medio de un solo feedback positivo. Ahora bien, este método es inherentemente ruidoso, y no puede soportar el feedback negativo. Es ruidoso porque esto no se trata de cómo el usuario dará una preferencia, si no de cuánto puede congiar el modelo en expresiones de gusto aisladas. El modelo no puede saber el grado de preferencia específica, pero sí puede ver que el usuario da una misma pista positiva hacia un ítem de contenido e forma constante. Esto puede ser usado para expresar la confianza del modelo sobre cierta preferencia de forma numérica.</dd>
   <dd>Este método requere tomar en cuenta aspectos adicionales a lo anterior. Por ejemplo, una persona no puede dar una preferencia a dos ítems al mismo tiempo. Esto hace que no se puedan comparar dos piezas de contenido similares por una confianza sobre el usuario respecto a cada una.</dd>
