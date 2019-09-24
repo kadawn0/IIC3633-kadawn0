@@ -5,6 +5,7 @@ Blog para el curso Sistemas Recomendadores
 
 ## Posts 
 
+<dl>
  <dt>[24-09-2019][11:00 AM] Deep Neural Networks for YouTube Recommendations </dt>
   <dd><em>Summary: </em> Youtube recommender systems have evolved from simple collaborative filtering to a deep neural network of many layers. It's objective is to predict the next watched video of every user based on inference about the future and not about the past. This means that they holdout data from the training set so that the model won't learn too mucho about the user's past and is forced to recommend bsaed on his or her latest trends. Apart from this, it ensures to broadcast 'fresh' content to the whole user network because A/B testing has shown a marked preference for new content, and it is possible to do thanks to the dynamic nature of Youtube (users uploading hours of video each second). </dd>
   <dd>The strategy is to filter a group of 'candidates' from the video corpus, according to past user preferences and context. These features are represented inside an embedding, a tensor whih maps characteristics of many different dimensionalities. For example, binary features are the log in state of the user, user gender and a 'example' age (based on upload time) of any video. An example of continuous variables is the vector of video IDs from the user's history, a search queries vector, and the explicit exclusion of site contextual information such as search page results that lead to a watch from the user. </dd>
